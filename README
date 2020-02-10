@@ -22,6 +22,14 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 
 5. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
 
+6.第二次编译：
+cd lede                                                                      # 进入LEDE目录
+git pull                                                                     # 同步更新大雕源码
+./scripts/feeds update -a && ./scripts/feeds install -a                      # 更新Feeds
+rm -rf ./tmp && rm -rf .config                                               # 清除编译配置和缓存
+make menuconfig                                                              # 进入编译配置菜单
+make -jn V=99                                                                # 开始编译 n=线程数+1，例如4线程的I5填-j5
+
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
 你可以自由使用，但源码编译二次发布请注明我的 GitHub 仓库链接。谢谢合作！
@@ -53,7 +61,6 @@ the kernel and all choosen applications.
 To build your own firmware you need to have access to a Linux, BSD or MacOSX system
 (case-sensitive filesystem required). Cygwin will not be supported because of
 the lack of case sensitiveness in the file system.
-
 
 
 Note: Addition Lean's private package source code in ./package/lean directory. Use it under GPL v3.
