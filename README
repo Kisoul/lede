@@ -16,13 +16,21 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 
 3. git clone https://github.com/coolsnowwolf/lede 命令下载好源代码，然后 cd lede 进入目录
 
-4. ./scripts/feeds update -a 
+4. 加入Lienol的passwall：
+vi feeds.conf.default
+加入src-git lienol https://github.com/Lienol/openwrt-package
+   ./scripts/feeds clean
+   ./scripts/feeds update -a 
+   rm -rf feeds/lienol/package/verysync
+   rm -rf feeds/lienol/lienol/luci-app-pppoe-relay
+   rm -rf feeds/lienol/lienol/luci-app-kodexplorer
    ./scripts/feeds install -a
-   make menuconfig 
+  
+5. make menuconfig 
 
-5. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
+6. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
 
-6.第二次编译：
+7.第二次编译：
 cd lede                                                                      # 进入LEDE目录
 git pull                                                                     # 同步更新大雕源码
 ./scripts/feeds update -a && ./scripts/feeds install -a                      # 更新Feeds
