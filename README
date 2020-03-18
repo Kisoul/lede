@@ -24,6 +24,7 @@ vi feeds.conf.default
    rm -rf feeds/lienol/package/verysync
    rm -rf feeds/lienol/lienol/luci-app-pppoe-relay
    rm -rf feeds/lienol/lienol/luci-app-kodexplorer
+   rm -rf feeds/lienol/others/luci-app-verysync
    ./scripts/feeds install -a
   
 5. make menuconfig 
