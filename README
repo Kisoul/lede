@@ -21,10 +21,14 @@ vi feeds.conf.default
 加入src-git lienol https://github.com/Lienol/openwrt-package
    ./scripts/feeds clean
    ./scripts/feeds update -a 
+   rm -rf feeds/lienol/package/ipt2socks
+   rm -rf feeds/lienol/package/shadowsocksr-libev
+   rm -rf feeds/lienol/package/pdnsd-alt
    rm -rf feeds/lienol/package/verysync
-   rm -rf feeds/lienol/lienol/luci-app-pppoe-relay
-   rm -rf feeds/lienol/lienol/luci-app-kodexplorer
    rm -rf feeds/lienol/others/luci-app-verysync
+   rm -rf feeds/lienol/lienol/luci-app-kodexplorer  
+   rm -rf package/lean/luci-app-pppoe-relay
+   rm -rf package/lean/luci-app-v2ray-server
    ./scripts/feeds install -a
   
 5. make menuconfig  
