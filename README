@@ -69,6 +69,32 @@ rm -rf feeds/Kisoul/lienol/luci-app-guest-wifi
 rm -rf package/lean/luci-app-pppoe-relay
 rm -rf package/lean/luci-app-v2ray-server
 
+删除与lienol最新版插件重复的插件
+rm -rf feeds/Kisoul/package/tcping
+rm -rf feeds/Kisoul/package/syncthing
+rm -rf feeds/Kisoul/package/openssl1.1
+rm -rf feeds/Kisoul/package/chinadns-ng
+rm -rf feeds/Kisoul/package/brook
+rm -rf feeds/Kisoul/others/luci-app-syncthing
+rm -rf feeds/Kisoul/others/luci-app-kcptun
+rm -rf feeds/Kisoul/others/luci-app-control-weburl
+rm -rf feeds/Kisoul/others/luci-app-control-webrestriction
+rm -rf feeds/Kisoul/others/luci-app-control-timewol
+rm -rf feeds/Kisoul/lienol/luci-theme-bootstrap-mod
+rm -rf feeds/Kisoul/lienol/luci-theme-argon-light-mod
+rm -rf feeds/Kisoul/lienol/luci-theme-argon-dark-mod
+rm -rf feeds/Kisoul/lienol/luci-app-v2ray-server
+rm -rf feeds/Kisoul/lienol/luci-app-trojan-server
+rm -rf feeds/Kisoul/lienol/luci-app-timecontrol
+rm -rf feeds/Kisoul/lienol/luci-app-ssr-libev-sever
+rm -rf feeds/Kisoul/lienol/luci-app-pptp-vpnserver-manyusers
+rm -rf feeds/Kisoul/lienol/luci-app-pppoe-server
+rm -rf feeds/Kisoul/lienol/luci-app-pppoe-relay
+rm -rf feeds/Kisoul/lienol/luci-app-ipsec-vpnserver-manyuers
+rm -rf feeds/Kisoul/lienol/luci-app-filebrowser
+rm -rf feeds/Kisoul/lienol/luci-app-fileassistant
+rm -rf feeds/Kisoul/lienol/luci-app-brook-sever
+
 #rm -rf feeds/Kisoul/package/ipt2socks
 #rm -rf feeds/Kisoul/package/shadowsocksr-libev
 #rm -rf feeds/Kisoul/package/pdnsd-alt
