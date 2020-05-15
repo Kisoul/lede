@@ -91,10 +91,10 @@ rm -rf feeds/Kisoul/lienol/luci-app-ssr-libev-server
 rm -rf feeds/Kisoul/lienol/luci-app-pptp-vpnserver-manyusers
 rm -rf feeds/Kisoul/lienol/luci-app-pppoe-server
 rm -rf feeds/Kisoul/lienol/luci-app-pppoe-relay
-rm -rf feeds/Kisoul/lienol/luci-app-ipsec-vpnserver-manyuers
+rm -rf feeds/Kisoul/lienol/luci-app-ipsec-vpnserver-manyusers
 rm -rf feeds/Kisoul/lienol/luci-app-filebrowser
 rm -rf feeds/Kisoul/lienol/luci-app-fileassistant
-rm -rf feeds/Kisoul/lienol/luci-app-brook-sever
+rm -rf feeds/Kisoul/lienol/luci-app-brook-server
 
 #rm -rf feeds/Kisoul/package/ipt2socks
 #rm -rf feeds/Kisoul/package/shadowsocksr-libev
