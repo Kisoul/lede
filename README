@@ -29,6 +29,7 @@ vi feeds.conf.default
 加入src-git lienol https://github.com/Lienol/openwrt-package
 ./scripts/feeds clean
 ./scripts/feeds update -a 
+删除与Lean重复的插件
 rm -rf feeds/lienol/package/ipt2socks
 rm -rf feeds/lienol/package/shadowsocksr-libev
 rm -rf feeds/lienol/package/pdnsd-alt
@@ -50,7 +51,7 @@ rm -rf package/lean/luci-app-v2ray-server
 5. Lienol的passwall停更了，代码仓库也删除了需要加入passwall：
 vi feeds.conf.default
 加入src-git Kisoul https://github.com/Kisoul/Lienol-openwrt-packages-backup
-
+删除与Lean重复的插件
 rm -rf feeds/Kisoul/package/ipt2socks
 rm -rf feeds/Kisoul/package/shadowsocksr-libev
 rm -rf feeds/Kisoul/package/pdnsd-alt
