@@ -33,22 +33,50 @@ rm -rf feeds/lienol/package/ipt2socks
 rm -rf feeds/lienol/package/shadowsocksr-libev
 rm -rf feeds/lienol/package/pdnsd-alt
 rm -rf feeds/lienol/package/verysync
+rm -rf feeds/lienol/package/v2ray-plugin
+rm -rf feeds/lienol/package/v2ray
+rm -rf feeds/lienol/package/trojan
+rm -rf feeds/lienol/package/simple-obfs
+rm -rf feeds/lienol/package/kcptun
+rm -rf feeds/lienol/package/dns2socks
 rm -rf feeds/lienol/others/luci-app-verysync
-rm -rf feeds/lienol/lienol/luci-app-kodexplorer  
+rm -rf feeds/lienol/lienol/luci-app-softethervpn
+rm -rf feeds/lienol/lienol/luci-app-ramfree
+rm -rf feeds/lienol/lienol/luci-app-kodexplorer
+rm -rf feeds/lienol/lienol/luci-app-guest-wifi
 rm -rf package/lean/luci-app-pppoe-relay
 rm -rf package/lean/luci-app-v2ray-server
 
 5. Lienol的passwall停更了，代码仓库也删除了需要加入passwall：
 vi feeds.conf.default
 加入src-git Kisoul https://github.com/Kisoul/Lienol-openwrt-packages-backup
+
 rm -rf feeds/Kisoul/package/ipt2socks
 rm -rf feeds/Kisoul/package/shadowsocksr-libev
 rm -rf feeds/Kisoul/package/pdnsd-alt
 rm -rf feeds/Kisoul/package/verysync
+rm -rf feeds/Kisoul/package/v2ray-plugin
+rm -rf feeds/Kisoul/package/v2ray
+rm -rf feeds/Kisoul/package/trojan
+rm -rf feeds/Kisoul/package/simple-obfs
+rm -rf feeds/Kisoul/package/kcptun
+rm -rf feeds/Kisoul/package/dns2socks
 rm -rf feeds/Kisoul/others/luci-app-verysync
-rm -rf feeds/Kisoul/lienol/luci-app-kodexplorer  
+rm -rf feeds/Kisoul/lienol/luci-app-softethervpn
+rm -rf feeds/Kisoul/lienol/luci-app-ramfree
+rm -rf feeds/Kisoul/lienol/luci-app-kodexplorer
+rm -rf feeds/Kisoul/lienol/luci-app-guest-wifi
 rm -rf package/lean/luci-app-pppoe-relay
 rm -rf package/lean/luci-app-v2ray-server
+
+#rm -rf feeds/Kisoul/package/ipt2socks
+#rm -rf feeds/Kisoul/package/shadowsocksr-libev
+#rm -rf feeds/Kisoul/package/pdnsd-alt
+#rm -rf feeds/Kisoul/package/verysync
+#rm -rf feeds/Kisoul/others/luci-app-verysync
+#rm -rf feeds/Kisoul/lienol/luci-app-kodexplorer  
+#rm -rf package/lean/luci-app-pppoe-relay
+#rm -rf package/lean/luci-app-v2ray-server
 ./scripts/feeds install -a
   
 6. make menuconfig  
