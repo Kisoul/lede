@@ -87,7 +87,7 @@ rm -rf feeds/Kisoul/lienol/luci-theme-argon-dark-mod
 rm -rf feeds/Kisoul/lienol/luci-app-v2ray-server
 rm -rf feeds/Kisoul/lienol/luci-app-trojan-server
 rm -rf feeds/Kisoul/lienol/luci-app-timecontrol
-rm -rf feeds/Kisoul/lienol/luci-app-ssr-libev-sever
+rm -rf feeds/Kisoul/lienol/luci-app-ssr-libev-server
 rm -rf feeds/Kisoul/lienol/luci-app-pptp-vpnserver-manyusers
 rm -rf feeds/Kisoul/lienol/luci-app-pppoe-server
 rm -rf feeds/Kisoul/lienol/luci-app-pppoe-relay
