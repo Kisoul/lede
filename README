@@ -120,13 +120,16 @@ rm -rf feeds/Kisoul/lienol/luci-app-brook-server
 
 10. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
 
-11.第二次编译：
+11. 第二次编译：
 cd lede                                                                      # 进入LEDE目录
 git pull                                                                     # 同步更新大雕源码
 ./scripts/feeds update -a && ./scripts/feeds install -a                      # 更新Feeds
 rm -rf ./tmp && rm -rf .config                                               # 清除编译配置和缓存
 make menuconfig                                                              # 进入编译配置菜单
 make -jn V=99                                                                # 开始编译 n=线程数+1，例如4线程的I5填-j5
+
+12. 其他：
+采用WSL编译过程中出现“'files/windowsapps/canonicalgrouplimited.ubuntu18.04onwindows_2020.1804.7.0_x64__79rhkp1fndgsc' is included in the path environment variable, which is insecure in combination with the -execdir action of find. please remove that entry from $path”，可以通过运行PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')解决。
 
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
