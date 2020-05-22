@@ -129,7 +129,7 @@ make menuconfig                                                              # �
 make -jn V=99                                                                # 开始编译 n=线程数+1，例如4线程的I5填-j5
 
 12. 其他：
-采用WSL编译过程中出现“'files/windowsapps/canonicalgrouplimited.ubuntu18.04onwindows_2020.1804.7.0_x64__79rhkp1fndgsc' is included in the path environment variable, which is insecure in combination with the -execdir action of find. please remove that entry from $path”，可以通过运行PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')解决。
+采用WSL编译过程中出现“'files/windowsapps/canonicalgrouplimited.ubuntu18.04onwindows_2020.1804.7.0_x64__79rhkp1fndgsc' is included in the path environment variable, which is insecure in combination with the -execdir action of find. please remove that entry from $path”，可以通过运行PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')临时解决（重启WSL失效）；或参照https://github.com/microsoft/WSL/issues/1493将windows注册表中的\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{GUID}中的Flags值由7改为5，然后重启WSL。
 
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
