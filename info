@@ -113,7 +113,7 @@ rm -rf feeds/Kisoul/lienol/luci-app-brook-server
    
 7.取消无线驱动
    kernel modules -> Wireless Drivers -> 取消所有勾选
-   network -> 取消hostapd相关的所有勾选(hostapd, hostapd-common（与wpad关联）, hostapd-common-old, hostapd-mini)
+   network -> WirelessAPS -> 取消hostapd相关的所有勾选(hostapd, hostapd-common（与wpad关联）, hostapd-common-old, hostapd-mini)
  
 8. 增加nfs-v3功能
    network ->Filesystem ->nfs-kernel-server
