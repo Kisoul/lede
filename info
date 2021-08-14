@@ -112,14 +112,19 @@ rm -rf feeds/Kisoul/lienol/luci-app-brook-server
 6. make menuconfig  
    
 7.取消无线驱动
-   kernel modules -> Wireless Drivers -> 取消所有勾选
-   network -> WirelessAPS -> 取消hostapd相关的所有勾选(hostapd, hostapd-common（与wpad关联）, hostapd-common-old, hostapd-mini)
+kernel modules -> Wireless Drivers -> 取消所有勾选
+network -> WirelessAPD -> 取消hostapd相关的所有勾选(hostapd, hostapd-common（与wpad关联）, hostapd-common-old, hostapd-mini)
  
 8. 增加nfs-v3功能
-   network ->Filesystem ->nfs-kernel-server
+network ->Filesystem -> nfs-kernel-server
    
 9. 增加ipv6
-   Extra packages ->ipv6help
+Extra packages -> ipv6help (选择后下面选项会自动勾选)
+Extra packages -> ipv6helper   
+Network -> odhcp6c
+Network -> odhcpd-ipv6only
+LuCI -> Protocols -> luci-proto-ipv6
+LuCI -> Protocols -> luci-proto-ppp
 
 10. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
 
