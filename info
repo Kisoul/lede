@@ -27,29 +27,88 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 
 3. git clone https://github.com/coolsnowwolf/lede 命令下载好源代码，然后 cd lede 进入目录
 
-4. 加入Lienol的passwall：
+4. 加入kiddin9的openwrt-packages：
 vi feeds.conf.default
-加入src-git lienol https://github.com/Lienol/openwrt-package
+加入src-git kiddin9 https://github.com/kiddin9/openwrt-packages.git
 ./scripts/feeds clean
 ./scripts/feeds update -a 
 删除与Lean重复的插件
-rm -rf feeds/lienol/package/ipt2socks
-rm -rf feeds/lienol/package/shadowsocksr-libev
-rm -rf feeds/lienol/package/pdnsd-alt
-rm -rf feeds/lienol/package/verysync
-rm -rf feeds/lienol/package/v2ray-plugin
-rm -rf feeds/lienol/package/v2ray
-rm -rf feeds/lienol/package/trojan
-rm -rf feeds/lienol/package/simple-obfs
-rm -rf feeds/lienol/package/kcptun
-rm -rf feeds/lienol/package/dns2socks
-rm -rf feeds/lienol/others/luci-app-verysync
-rm -rf feeds/lienol/lienol/luci-app-softethervpn
-rm -rf feeds/lienol/lienol/luci-app-ramfree
-rm -rf feeds/lienol/lienol/luci-app-kodexplorer
-rm -rf feeds/lienol/lienol/luci-app-guest-wifi
-rm -rf package/lean/luci-app-pppoe-relay
-rm -rf package/lean/luci-app-v2ray-server
+rm -rf feeds/kiddin9/adbyby
+rm -rf feeds/kiddin9/antileech
+rm -rf feeds/kiddin9/automount
+rm -rf feeds/kiddin9/baidupcs-web
+rm -rf feeds/kiddin9/dnsforwarder
+rm -rf feeds/kiddin9/dsmboot
+rm -rf feeds/kiddin9/k3-brcmfmac4366c-firmware
+rm -rf feeds/kiddin9/k3screenctrl
+rm -rf feeds/kiddin9/luci-app-accesscontrol
+rm -rf feeds/kiddin9/luci-app-adbyby-plus
+rm -rf feeds/kiddin9/luci-app-airplay2
+rm -rf feeds/kiddin9/luci-app-amule
+rm -rf feeds/kiddin9/luci-app-arpbind
+rm -rf feeds/kiddin9/luci-app-autoreboot
+rm -rf feeds/kiddin9/luci-app-baidupcs-web
+rm -rf feeds/kiddin9/luci-app-dnsforwarder
+rm -rf feeds/kiddin9/luci-app-easymesh
+rm -rf feeds/kiddin9/luci-app-familycloud
+rm -rf feeds/kiddin9/luci-app-frpc
+rm -rf feeds/kiddin9/luci-app-frps
+rm -rf feeds/kiddin9/luci-app-guest-wifi
+rm -rf feeds/kiddin9/luci-app-haproxy-tcp
+rm -rf feeds/kiddin9/luci-app-ipsec-vpnd
+rm -rf feeds/kiddin9/luci-app-jd-dailybonus
+rm -rf feeds/kiddin9/luci-app-kodexplorer
+rm -rf feeds/kiddin9/luci-app-music-remote-center
+rm -rf feeds/kiddin9/luci-app-mwan3helper
+rm -rf feeds/kiddin9/luci-app-n2n_v2
+rm -rf feeds/kiddin9/luci-app-nfs
+rm -rf feeds/kiddin9/luci-app-nft-qos
+rm -rf feeds/kiddin9/luci-app-nps
+rm -rf feeds/kiddin9/luci-app-openvpn-server
+rm -rf feeds/kiddin9/luci-app-pppoe-relay
+rm -rf feeds/kiddin9/luci-app-pptp-server
+rm -rf feeds/kiddin9/luci-app-ps3netsrv
+rm -rf feeds/kiddin9/luci-app-pushbot
+rm -rf feeds/kiddin9/luci-app-ramfree
+rm -rf feeds/kiddin9/luci-app-rclone
+rm -rf feeds/kiddin9/luci-app-ssrserver-python
+rm -rf feeds/kiddin9/luci-app-syncdial
+rm -rf feeds/kiddin9/luci-app-ttyd
+rm -rf feeds/kiddin9/luci-app-turboacc
+rm -rf feeds/kiddin9/luci-app-unblockmusic
+rm -rf feeds/kiddin9/luci-app-usb-printer
+rm -rf feeds/kiddin9/luci-app-uugamebooster
+rm -rf feeds/kiddin9/luci-app-v2ray-server
+rm -rf feeds/kiddin9/luci-app-verysync
+rm -rf feeds/kiddin9/luci-app-vlmcsd
+rm -rf feeds/kiddin9/luci-app-vsftpd
+rm -rf feeds/kiddin9/luci-app-webadmin
+rm -rf feeds/kiddin9/luci-app-xlnetacc
+rm -rf feeds/kiddin9/luci-app-zerotier
+rm -rf feeds/kiddin9/luci-lib-docker
+rm -rf feeds/kiddin9/luci-lib-fs
+rm -rf feeds/kiddin9/luci-proto-bonding
+rm -rf feeds/kiddin9/n2n_v2
+rm -rf feeds/kiddin9/ntfs3-mount
+rm -rf feeds/kiddin9/openwrt-fullconenat
+rm -rf feeds/kiddin9/pdnsd-alt
+rm -rf feeds/kiddin9/polarssl
+rm -rf feeds/kiddin9/ps3netsrv
+rm -rf feeds/kiddin9/qBittorrent-static
+rm -rf feeds/kiddin9/qtbase
+rm -rf feeds/kiddin9/r8125
+rm -rf feeds/kiddin9/r8152
+rm -rf feeds/kiddin9/rclone
+rm -rf feeds/kiddin9/redsocks2
+rm -rf feeds/kiddin9/shortcut-fe
+rm -rf feeds/kiddin9/srelay
+rm -rf feeds/kiddin9/tcpping
+rm -rf feeds/kiddin9/UnblockNeteaseMusic-Go
+rm -rf feeds/kiddin9/uugamebooster
+rm -rf feeds/kiddin9/vlmcsd
+rm -rf feeds/kiddin9/vsftpd-alt
+rm -rf feeds/kiddin9/wol
+rm -rf feeds/kiddin9/wxbase
 
 5. Lienol的passwall停更了，代码仓库也删除了需要加入passwall：
 vi feeds.conf.default
