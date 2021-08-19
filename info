@@ -335,7 +335,7 @@ make -jn V=99                                                                # �
 （1）采用WSL编译过程中出现“'files/windowsapps/canonicalgrouplimited.ubuntu18.04onwindows_2020.1804.7.0_x64__79rhkp1fndgsc' is included in the path environment variable, which is insecure in combination with the -execdir action of find. please remove that entry from $path”，可以通过运行PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')临时解决（重启WSL失效）；或参照https://github.com/microsoft/WSL/issues/1493将windows注册表中的\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{GUID}中的Flags值由7改为5，然后重启WSL。
 （2）首次编译时，容易报错：bash: po2lmo: command not found 这应该是因为编译XXXXXXX需要把 luci-base 先编译出来，但是目前顺序可能是先编译了 hello world 导致出现问题，此时使用 make package/feeds/luci/luci-base/compile V=99 编译出 luci-base 后再编译就不会报错。 这个问题虽然出现的频率不高，但是也不低。
 （3）Lean大的SSR-Plus代码
-     vim ./feeds.conf.default加入代码src-git helloworld https://github.com/fw876/helloworld
+vim ./feeds.conf.default加入代码src-git helloworld https://github.com/fw876/helloworld
 
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
