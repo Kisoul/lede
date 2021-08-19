@@ -53,6 +53,7 @@ rm -rf feeds/kiddin9/luci-app-accesscontrol
 rm -rf feeds/kiddin9/luci-app-adbyby-plus
 rm -rf feeds/kiddin9/luci-app-airplay2
 rm -rf feeds/kiddin9/luci-app-amule
+rm -rf feeds/kiddin9/luci-app-argon-config
 rm -rf feeds/kiddin9/luci-app-arpbind
 rm -rf feeds/kiddin9/luci-app-autoreboot
 rm -rf feeds/kiddin9/luci-app-baidupcs-web
