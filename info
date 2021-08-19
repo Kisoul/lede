@@ -147,6 +147,7 @@ rm -rf package/lean/antileech
 rm -rf package/lean/autocore
 rm -rf package/lean/automount
 rm -rf package/lean/baidupcs-web
+rm -rf package/lean/default-settings
 rm -rf package/lean/dns2socks
 rm -rf package/lean/dnsforwarder
 rm -rf package/lean/dnsproxy
