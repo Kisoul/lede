@@ -12,7 +12,7 @@ export https_proxy=http://127.0.0.1:1080
 export ftp_proxy=http://127.0.0.1:1080
 打开22端口的命令如下：（用于实现用notepad++远程连接提wsl）
 sudo service ssh start
-若要定制openwrt信息，请修改zzz-default-setting文件中的openwrt_release值
+若要定制openwrt信息，请修改package/lean/zzz-default-setting文件中的openwrt_release值
 
 编译命令如下:
 
