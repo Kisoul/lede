@@ -70,6 +70,7 @@ rm -rf feeds/kiddin9/luci-app-haproxy-tcp
 rm -rf feeds/kiddin9/luci-app-ipsec-vpnd
 rm -rf feeds/kiddin9/luci-app-jd-dailybonus
 rm -rf feeds/kiddin9/luci-app-kodexplorer
+rm -rf feeds/kiddin9/luci-app-mtwifi
 rm -rf feeds/kiddin9/luci-app-music-remote-center
 rm -rf feeds/kiddin9/luci-app-mwan3helper
 rm -rf feeds/kiddin9/luci-app-n2n_v2
@@ -106,6 +107,8 @@ rm -rf feeds/kiddin9/luci-proto-bonding
 rm -rf feeds/kiddin9/luci-theme-argon
 rm -rf feeds/kiddin9/mentohust
 rm -rf feeds/kiddin9/microsocks
+rm -rf feeds/kiddin9/mt-drivers
+rm -rf feeds/kiddin9/mtk_apcli
 rm -rf feeds/kiddin9/mtk-eip93
 rm -rf feeds/kiddin9/n2n_v2
 rm -rf feeds/kiddin9/ntfs3
@@ -126,6 +129,7 @@ rm -rf feeds/kiddin9/rclone
 rm -rf feeds/kiddin9/rclone-ng
 rm -rf feeds/kiddin9/rclone-webui-react
 rm -rf feeds/kiddin9/redsocks2
+rm -rf feeds/kiddin9/shellsync
 rm -rf feeds/kiddin9/shortcut-fe
 rm -rf feeds/kiddin9/simple-obfs
 rm -rf feeds/kiddin9/srelay
@@ -215,6 +219,7 @@ rm -rf package/lean/luci-theme-argon
 rm -rf package/lean/mentohust
 rm -rf package/lean/microsocks
 rm -rf package/lean/mtk-eip93
+rm -rf package/lean/mt
 rm -rf package/lean/n2n_v2
 rm -rf package/lean/ntfs3
 rm -rf package/lean/ntfs3-mount
@@ -247,6 +252,7 @@ rm -rf package/lean/vlmcsd
 rm -rf package/lean/vsftpd-alt
 rm -rf package/lean/wol
 rm -rf package/lean/wxbase
+rm -rf package/network/services/shellsync
 
 5. Lienol的passwall停更了，代码仓库也删除了需要加入passwall：
 vi feeds.conf.default
