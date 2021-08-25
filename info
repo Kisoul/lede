@@ -42,6 +42,8 @@ rm -rf feeds/kiddin9/antileech
 rm -rf feeds/kiddin9/autocore
 rm -rf feeds/kiddin9/automount
 rm -rf feeds/kiddin9/baidupcs-web
+rm -rf feeds/kiddin9/ddns-scripts-aliyun
+rm -rf feeds/kiddin9/ddns-scripts-dnspod
 rm -rf feeds/kiddin9/default-settings
 rm -rf feeds/kiddin9/dns2socks
 rm -rf feeds/kiddin9/dnsforwarder
@@ -156,6 +158,8 @@ rm -rf package/lean/antileech
 rm -rf package/lean/autocore
 rm -rf package/lean/automount
 rm -rf package/lean/baidupcs-web
+rm -rf package/lean/ddns-scripts-aliyun
+rm -rf package/lean/ddns-scripts-dnspod
 rm -rf feeds/kiddin9/default-settings
 rm -rf package/lean/dns2socks
 rm -rf package/lean/dnsforwarder
