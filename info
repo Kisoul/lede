@@ -89,6 +89,7 @@ rm -rf feeds/kiddin9/luci-app-pushbot
 rm -rf feeds/kiddin9/luci-app-qbittorrent
 rm -rf feeds/kiddin9/luci-app-ramfree
 rm -rf feeds/kiddin9/luci-app-rclone
+rm -rf feeds/kiddin9/luci-app-samba4
 rm -rf feeds/kiddin9/luci-app-ssrserver-python
 rm -rf feeds/kiddin9/luci-app-syncdial
 rm -rf feeds/kiddin9/luci-app-ttyd
@@ -117,6 +118,7 @@ rm -rf feeds/kiddin9/n2n_v2
 rm -rf feeds/kiddin9/ntfs3
 rm -rf feeds/kiddin9/ntfs3-mount
 rm -rf feeds/kiddin9/openwrt-fullconenat
+rm -rf feeds/kiddin9/openwrt-openvpn/luci-app-openvpn-server
 rm -rf feeds/kiddin9/pdnsd-alt
 rm -rf feeds/kiddin9/polarssl
 rm -rf feeds/kiddin9/ps3netsrv
