@@ -336,8 +336,7 @@ network -> WirelessAPD -> 取消hostapd相关的所有勾选(hostapd, hostapd-co
 network -> Filesystem -> nfs-kernel-server
    
 9. 增加ipv6
-Extra packages -> ipv6help (选择后下面选项会自动勾选)
-Extra packages -> ipv6helper   
+Extra packages -> ipv6helper (选择后下面选项会自动勾选)   
 Network -> odhcp6c
 Network -> odhcpd-ipv6only
 LuCI -> Protocols -> luci-proto-ipv6
