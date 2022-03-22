@@ -31,7 +31,7 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 3. git clone https://github.com/coolsnowwolf/lede 命令下载好源代码，然后 cd lede 进入目录
 
 4. 加入kiddin9的openwrt-packages：
-vi feeds.conf.default
+vi feeds.conf.default  （按i进入可编辑状态，按esc退出编辑状态；:q退出编辑，:q!强制退出编辑，:w!强制写入）
 加入src-git kiddin9 https://github.com/kiddin9/openwrt-packages.git
 ./scripts/feeds clean
 ./scripts/feeds update -a 
