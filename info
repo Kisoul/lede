@@ -31,330 +31,50 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 3. git clone https://github.com/coolsnowwolf/lede 命令下载好源代码，然后 cd lede 进入目录
 
 4. 加入kiddin9的openwrt-packages：
-vi feeds.conf.default  （按i进入可编辑状态，按esc退出编辑状态；:q退出编辑，:q!强制退出编辑，:w!强制写入）
-加入src-git kiddin9 https://github.com/kiddin9/openwrt-packages.git
-./scripts/feeds clean
-./scripts/feeds update -a 
-删除与Lean重复的插件
-rm -rf feeds/kiddin9/adbyby
-rm -rf feeds/kiddin9/amule
-rm -rf feeds/kiddin9/antileech
-rm -rf feeds/kiddin9/autocore
-rm -rf feeds/kiddin9/automount
-rm -rf feeds/kiddin9/baidupcs-web
-rm -rf feeds/kiddin9/ddns-scripts-aliyun
-rm -rf feeds/kiddin9/ddns-scripts-dnspod
-rm -rf feeds/kiddin9/default-settings
-rm -rf feeds/kiddin9/dns2socks
-rm -rf feeds/kiddin9/dnsforwarder
-rm -rf feeds/kiddin9/dnsproxy
-rm -rf feeds/kiddin9/dsmboot
-rm -rf feeds/kiddin9/gmediarender
-rm -rf feeds/kiddin9/ipt2socks
-rm -rf feeds/kiddin9/k3-brcmfmac4366c-firmware
-rm -rf feeds/kiddin9/k3screenctrl
-rm -rf feeds/kiddin9/libcryptopp
-rm -rf feeds/kiddin9/luci-app-accesscontrol
-rm -rf feeds/kiddin9/luci-app-adbyby-plus
-rm -rf feeds/kiddin9/luci-app-airplay2
-rm -rf feeds/kiddin9/luci-app-amule
-rm -rf feeds/kiddin9/luci-app-argon-config
-rm -rf feeds/kiddin9/luci-app-arpbind
-rm -rf feeds/kiddin9/luci-app-autoreboot
-rm -rf feeds/kiddin9/luci-app-baidupcs-web
-rm -rf feeds/kiddin9/luci-app-cpufreq
-rm -rf feeds/kiddin9/luci-app-diskman
-rm -rf feeds/kiddin9/luci-app-dnsforwarder
-rm -rf feeds/kiddin9/luci-app-easymesh
-rm -rf feeds/kiddin9/luci-app-familycloud
-rm -rf feeds/kiddin9/luci-app-filetransfer
-rm -rf feeds/kiddin9/luci-app-frpc
-rm -rf feeds/kiddin9/luci-app-frps
-rm -rf feeds/kiddin9/luci-app-guest-wifi
-rm -rf feeds/kiddin9/luci-app-haproxy-tcp
-rm -rf feeds/kiddin9/luci-app-ipsec-vpnd
-rm -rf feeds/kiddin9/luci-app-jd-dailybonus
-rm -rf feeds/kiddin9/luci-app-kodexplorer
-rm -rf feeds/kiddin9/luci-app-mtwifi
-rm -rf feeds/kiddin9/luci-app-music-remote-center
-rm -rf feeds/kiddin9/luci-app-mwan3helper
-rm -rf feeds/kiddin9/luci-app-n2n_v2
-rm -rf feeds/kiddin9/luci-app-netdata
-rm -rf feeds/kiddin9/luci-app-nfs
-rm -rf feeds/kiddin9/luci-app-nft-qos
-rm -rf feeds/kiddin9/luci-app-nps
-rm -rf feeds/kiddin9/luci-app-openvpn-server
-rm -rf feeds/kiddin9/luci-app-pppoe-relay
-rm -rf feeds/kiddin9/luci-app-pptp-server
-rm -rf feeds/kiddin9/luci-app-ps3netsrv
-rm -rf feeds/kiddin9/luci-app-pushbot
-rm -rf feeds/kiddin9/luci-app-qbittorrent
-rm -rf feeds/kiddin9/luci-app-ramfree
-rm -rf feeds/kiddin9/luci-app-rclone
-rm -rf feeds/kiddin9/luci-app-samba4
-rm -rf feeds/kiddin9/luci-app-ssrserver-python
-rm -rf feeds/kiddin9/luci-app-syncdial
-rm -rf feeds/kiddin9/luci-app-ttyd
-rm -rf feeds/kiddin9/luci-app-turboacc
-rm -rf feeds/kiddin9/luci-app-unblockmusic
-rm -rf feeds/kiddin9/luci-app-usb-printer
-rm -rf feeds/kiddin9/luci-app-uugamebooster
-rm -rf feeds/kiddin9/luci-app-v2ray-server
-rm -rf feeds/kiddin9/luci-app-verysync
-rm -rf feeds/kiddin9/luci-app-vlmcsd
-rm -rf feeds/kiddin9/luci-app-vsftpd
-rm -rf feeds/kiddin9/luci-app-webadmin
-rm -rf feeds/kiddin9/luci-app-wrtbwmon
-rm -rf feeds/kiddin9/luci-app-xlnetacc
-rm -rf feeds/kiddin9/luci-app-zerotier
-rm -rf feeds/kiddin9/luci-lib-docker
-rm -rf feeds/kiddin9/luci-lib-fs
-rm -rf feeds/kiddin9/luci-proto-bonding
-rm -rf feeds/kiddin9/luci-theme-argon
-rm -rf feeds/kiddin9/mentohust
-rm -rf feeds/kiddin9/microsocks
-rm -rf feeds/kiddin9/mt-drivers
-rm -rf feeds/kiddin9/mtk_apcli
-rm -rf feeds/kiddin9/mtk-eip93
-rm -rf feeds/kiddin9/n2n_v2
-rm -rf feeds/kiddin9/ntfs3
-rm -rf feeds/kiddin9/ntfs3-mount
-rm -rf feeds/kiddin9/openwrt-fullconenat
-rm -rf feeds/kiddin9/openwrt-openvpn/luci-app-openvpn-server
-rm -rf feeds/kiddin9/pdnsd-alt
-rm -rf feeds/kiddin9/polarssl
-rm -rf feeds/kiddin9/ps3netsrv
-rm -rf feeds/kiddin9/qBittorrent
-rm -rf feeds/kiddin9/qBittorrent-static
-rm -rf feeds/kiddin9/qtbase
-rm -rf feeds/kiddin9/qttools
-rm -rf feeds/kiddin9/r8125
-rm -rf feeds/kiddin9/r8152
-rm -rf feeds/kiddin9/r8168
-rm -rf feeds/kiddin9/rblibtorrent
-rm -rf feeds/kiddin9/rclone
-rm -rf feeds/kiddin9/rclone-ng
-rm -rf feeds/kiddin9/rclone-webui-react
-rm -rf feeds/kiddin9/redsocks2
-rm -rf feeds/kiddin9/shellsync
-rm -rf feeds/kiddin9/shortcut-fe
-rm -rf feeds/kiddin9/simple-obfs
-rm -rf feeds/kiddin9/srelay
-rm -rf feeds/kiddin9/tcpping
-rm -rf feeds/kiddin9/trojan
-rm -rf feeds/kiddin9/UnblockNeteaseMusic
-rm -rf feeds/kiddin9/UnblockNeteaseMusic-Go
-rm -rf feeds/kiddin9/uugamebooster
-rm -rf feeds/kiddin9/verysync
-rm -rf feeds/kiddin9/vlmcsd
-rm -rf feeds/kiddin9/vsftpd-alt
-rm -rf feeds/kiddin9/wol
-rm -rf feeds/kiddin9/wxbase
-
-删除与kiddin9重复的插件
-rm -rf package/lean/adbyby
-rm -rf package/lean/amule
-rm -rf package/lean/antileech
-rm -rf package/lean/autocore
-rm -rf package/lean/automount
-rm -rf package/lean/baidupcs-web
-rm -rf package/lean/ddns-scripts-aliyun
-rm -rf package/lean/ddns-scripts-dnspod
-rm -rf feeds/kiddin9/default-settings
-rm -rf package/lean/dns2socks
-rm -rf package/lean/dnsforwarder
-rm -rf package/lean/dnsproxy
-rm -rf package/lean/dsmboot
-rm -rf package/lean/gmediarender
-rm -rf package/lean/ipt2socks
-rm -rf package/lean/k3-brcmfmac4366c-firmware
-rm -rf package/lean/k3screenctrl
-rm -rf package/lean/libcryptopp
-rm -rf package/lean/luci-app-accesscontrol
-rm -rf package/lean/luci-app-adbyby-plus
-rm -rf package/lean/luci-app-airplay2
-rm -rf package/lean/luci-app-amule
-rm -rf package/lean/luci-app-arpbind
-rm -rf package/lean/luci-app-autoreboot
-rm -rf package/lean/luci-app-baidupcs-web
-rm -rf package/lean/luci-app-cpufreq
-rm -rf package/lean/luci-app-diskman
-rm -rf package/lean/luci-app-dnsforwarder
-rm -rf package/lean/luci-app-easymesh
-rm -rf package/lean/luci-app-familycloud
-rm -rf package/lean/luci-app-filetransfer
-rm -rf package/lean/luci-app-frpc
-rm -rf package/lean/luci-app-frps
-rm -rf package/lean/luci-app-guest-wifi
-rm -rf package/lean/luci-app-haproxy-tcp
-rm -rf package/lean/luci-app-ipsec-vpnd
-rm -rf package/lean/luci-app-jd-dailybonus
-rm -rf package/lean/luci-app-kodexplorer
-rm -rf package/lean/luci-app-music-remote-center
-rm -rf package/lean/luci-app-mwan3helper
-rm -rf package/lean/luci-app-n2n_v2
-rm -rf package/lean/luci-app-netdata
-rm -rf package/lean/luci-app-nfs
-rm -rf package/lean/luci-app-nft-qos
-rm -rf package/lean/luci-app-nps
-rm -rf package/lean/luci-app-openvpn-server
-rm -rf package/lean/luci-app-pppoe-relay
-rm -rf package/lean/luci-app-pptp-server
-rm -rf package/lean/luci-app-ps3netsrv
-rm -rf package/lean/luci-app-pushbot
-rm -rf package/lean/luci-app-qbittorrent
-rm -rf package/lean/luci-app-ramfree
-rm -rf package/lean/luci-app-rclone
-rm -rf package/lean/luci-app-samba4
-rm -rf package/lean/luci-app-ssrserver-python
-rm -rf package/lean/luci-app-syncdial
-rm -rf package/lean/luci-app-ttyd
-rm -rf package/lean/luci-app-turboacc
-rm -rf package/lean/luci-app-unblockmusic
-rm -rf package/lean/luci-app-usb-printer
-rm -rf package/lean/luci-app-uugamebooster
-rm -rf package/lean/luci-app-v2ray-server
-rm -rf package/lean/luci-app-verysync
-rm -rf package/lean/luci-app-vlmcsd
-rm -rf package/lean/luci-app-vsftpd
-rm -rf package/lean/luci-app-webadmin
-rm -rf package/lean/luci-app-wrtbwmon
-rm -rf package/lean/luci-app-xlnetacc
-rm -rf package/lean/luci-app-zerotier
-rm -rf package/lean/luci-lib-docker
-rm -rf package/lean/luci-lib-fs
-rm -rf package/lean/luci-proto-bonding
-rm -rf package/lean/luci-theme-argon
-rm -rf package/lean/mentohust
-rm -rf package/lean/microsocks
-rm -rf package/lean/mtk-eip93
-rm -rf package/lean/mt
-rm -rf package/lean/n2n_v2
-rm -rf package/lean/ntfs3
-rm -rf package/lean/ntfs3-mount
-rm -rf package/lean/openwrt-fullconenat
-rm -rf package/lean/pdnsd-alt
-rm -rf package/lean/polarssl
-rm -rf package/lean/ps3netsrv
-rm -rf package/lean/qBittorrent
-rm -rf package/lean/qBittorrent-static
-rm -rf package/lean/qtbase
-rm -rf package/lean/qttools
-rm -rf package/lean/r8125
-rm -rf package/lean/r8152
-rm -rf package/lean/r8168
-rm -rf package/lean/rblibtorrent
-rm -rf package/lean/rclone
-rm -rf package/lean/rclone-ng
-rm -rf package/lean/rclone-webui-react
-rm -rf package/lean/redsocks2
-rm -rf package/lean/shortcut-fe
-rm -rf package/lean/simple-obfs
-rm -rf package/lean/srelay
-rm -rf package/lean/tcpping
-rm -rf package/lean/trojan
-rm -rf package/lean/UnblockNeteaseMusic
-rm -rf package/lean/UnblockNeteaseMusic-Go
-rm -rf package/lean/uugamebooster
-rm -rf package/lean/verysync
-rm -rf package/lean/vlmcsd
-rm -rf package/lean/vsftpd-alt
-rm -rf package/lean/wol
-rm -rf package/lean/wxbase
-rm -rf package/network/services/shellsync
+vi feeds.conf.default加入（按i进入可编辑状态，按esc退出编辑状态；:q退出编辑，:q!强制退出编辑，:w!强制写入）
+src-git kiddin9 https://github.com/kiddin9/openwrt-packages.git
 
 5. Lienol的passwall停更了，代码仓库也删除了需要加入passwall：
 vi feeds.conf.default加入
 src-git Kisoul https://github.com/Kisoul/Lienol-openwrt-packages-backup
-删除与Lean重复的插件
-rm -rf feeds/Kisoul/package/ipt2socks
-rm -rf feeds/Kisoul/package/shadowsocksr-libev
-rm -rf feeds/Kisoul/package/pdnsd-alt
-rm -rf feeds/Kisoul/package/verysync
-rm -rf feeds/Kisoul/package/v2ray-plugin
-rm -rf feeds/Kisoul/package/v2ray
-rm -rf feeds/Kisoul/package/trojan
-rm -rf feeds/Kisoul/package/simple-obfs
-rm -rf feeds/Kisoul/package/kcptun
-rm -rf feeds/Kisoul/package/dns2socks
-rm -rf feeds/Kisoul/others/luci-app-verysync
-rm -rf feeds/Kisoul/lienol/luci-app-softethervpn
-rm -rf feeds/Kisoul/lienol/luci-app-ramfree
-rm -rf feeds/Kisoul/lienol/luci-app-kodexplorer
-rm -rf feeds/Kisoul/lienol/luci-app-guest-wifi
-rm -rf package/lean/luci-app-pppoe-relay
-rm -rf package/lean/luci-app-v2ray-server
 
-删除与lienol最新版插件重复的插件
-rm -rf feeds/Kisoul/package/tcping
-rm -rf feeds/Kisoul/package/syncthing
-rm -rf feeds/Kisoul/package/openssl1.1
-rm -rf feeds/Kisoul/package/chinadns-ng
-rm -rf feeds/Kisoul/package/brook
-rm -rf feeds/Kisoul/others/luci-app-syncthing
-rm -rf feeds/Kisoul/others/luci-app-kcptun
-rm -rf feeds/Kisoul/others/luci-app-control-weburl
-rm -rf feeds/Kisoul/others/luci-app-control-webrestriction
-rm -rf feeds/Kisoul/others/luci-app-control-timewol
-rm -rf feeds/Kisoul/lienol/luci-theme-bootstrap-mod
-rm -rf feeds/Kisoul/lienol/luci-theme-argon-light-mod
-rm -rf feeds/Kisoul/lienol/luci-theme-argon-dark-mod
-rm -rf feeds/Kisoul/lienol/luci-app-v2ray-server
-rm -rf feeds/Kisoul/lienol/luci-app-trojan-server
-rm -rf feeds/Kisoul/lienol/luci-app-timecontrol
-rm -rf feeds/Kisoul/lienol/luci-app-ssr-libev-server
-rm -rf feeds/Kisoul/lienol/luci-app-pptp-vpnserver-manyusers
-rm -rf feeds/Kisoul/lienol/luci-app-pppoe-server
-rm -rf feeds/Kisoul/lienol/luci-app-pppoe-relay
-rm -rf feeds/Kisoul/lienol/luci-app-ipsec-vpnserver-manyusers
-rm -rf feeds/Kisoul/lienol/luci-app-filebrowser
-rm -rf feeds/Kisoul/lienol/luci-app-fileassistant
-rm -rf feeds/Kisoul/lienol/luci-app-brook-server
+6. 加入kenzok8的openwrt-packages：
+src-git kenzo https://github.com/kenzok8/openwrt-packages（稳定更新）
+src-git small https://github.com/kenzok8/small（最新更新）
 
-#rm -rf feeds/Kisoul/package/ipt2socks
-#rm -rf feeds/Kisoul/package/shadowsocksr-libev
-#rm -rf feeds/Kisoul/package/pdnsd-alt
-#rm -rf feeds/Kisoul/package/verysync
-#rm -rf feeds/Kisoul/others/luci-app-verysync
-#rm -rf feeds/Kisoul/lienol/luci-app-kodexplorer  
-#rm -rf package/lean/luci-app-pppoe-relay
-#rm -rf package/lean/luci-app-v2ray-server
-
-若要加入最新版的passwall（xiaorouji维护）
-src-git kenzo https://github.com/kenzok8/openwrt-packages
-src-git small https://github.com/kenzok8/small（新版passwall依赖）
-
+7. 同步插件代码并开始设置menu
+./scripts/feeds clean
+./scripts/feeds update -a 
 ./scripts/feeds install -a
-  
-6. make menuconfig  
+make menuconfig  
    
-7.取消无线驱动
+8.取消无线驱动
 kernel modules -> Wireless Drivers -> 取消所有勾选
 network -> WirelessAPD -> 取消hostapd相关的所有勾选(hostapd, hostapd-common（与wpad关联）, hostapd-common-old, hostapd-mini)
  
-8. 增加nfs-v3功能
+9. 增加nfs-v3功能
 network -> Filesystem -> nfs-kernel-server
    
-9. 增加ipv6
+10. 增加ipv6
 Extra packages -> ipv6helper (选择后下面选项会自动勾选)   
 Network -> odhcp6c
 Network -> odhcpd-ipv6only
 LuCI -> Protocols -> luci-proto-ipv6
 LuCI -> Protocols -> luci-proto-ppp
 
-10.增加kmod-nls-cp936支持简体中文
+11.增加kmod-nls-cp936支持简体中文
 kernel modules -> Native Language Support -> kmod-nls-cp936
 
-11.增加ntfs-3g支持
+12.增加ntfs-3g支持
 Utilities -> Filesystem -> ntfs-3g [1.use external FUSE library, selects package libfuse; 2.install the ntfs-3g.probe utility(*)]
 kernel modules -> Filesystems -> kmod-fuse
 
-12.为openclash增加kmod-inet-diag.ipk
+13.为openclash增加kmod-inet-diag.ipk
 kernel modules -> Network Support -> kmod-inet-diag
 
-13. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
+14. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
 
-14. 第二次编译：
+15. 第二次编译：
 cd lede                                                                      # 进入LEDE目录
 git pull                                                                     # 同步更新大雕源码
 ./scripts/feeds update -a && ./scripts/feeds install -a                      # 更新Feeds
@@ -362,7 +82,7 @@ rm -rf ./tmp && rm -rf .config                                               # �
 make menuconfig                                                              # 进入编译配置菜单
 make -jn V=99                                                                # 开始编译 n=线程数+1，例如4线程的I5填-j5
 
-15. 其他：
+16. 其他：
 （1）采用WSL编译过程中出现“'files/windowsapps/canonicalgrouplimited.ubuntu18.04onwindows_2020.1804.7.0_x64__79rhkp1fndgsc' is included in the path environment variable, which is insecure in combination with the -execdir action of find. please remove that entry from $path”，可以通过运行PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')临时解决（重启WSL失效）；或参照https://github.com/microsoft/WSL/issues/1493将windows注册表中的\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{GUID}中的Flags值由7改为5，然后重启WSL。
 （2）首次编译时，容易报错：bash: po2lmo: command not found 这应该是因为编译XXXXXXX需要把 luci-base 先编译出来，但是目前顺序可能是先编译了 hello world 导致出现问题，此时使用 make package/feeds/luci/luci-base/compile V=99 编译出 luci-base 后再编译就不会报错。 这个问题虽然出现的频率不高，但是也不低。
 （3）Lean大的SSR-Plus代码
