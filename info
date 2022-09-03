@@ -40,7 +40,8 @@ src-git Kisoul https://github.com/Kisoul/Lienol-openwrt-packages-backup
 
 6. 加入kenzok8的openwrt-packages：
 src-git kenzo https://github.com/kenzok8/openwrt-packages（稳定更新）
-src-git small https://github.com/kenzok8/small-package（最新更新）
+src-git small-package https://github.com/kenzok8/small-package（最新更新）
+src-git small https://github.com/kenzok8/small-package（passwall依赖库）
 
 7. 同步插件代码并开始设置menu
 ./scripts/feeds clean
