@@ -3,8 +3,8 @@
 中文：如何编译自己需要的 OpenWrt 固件
 
 注意：
-1. 不要用 root 用户 git 和编译！！！
-2. 国内用户编译前最好准备好梯子
+1.不要用 root 用户 git 和编译！！！
+2.国内用户编译前最好准备好梯子
 3.默认登陆IP 192.168.2.187 
 4.WSL系统代理设置如下：
 export http_proxy=http://127.0.0.1:1080
@@ -44,7 +44,7 @@ src-git kenzo https://github.com/kenzok8/openwrt-packages（稳定更新）
 src-git small-package https://github.com/kenzok8/small-package（最新更新）
 src-git small https://github.com/kenzok8/small-package（passwall依赖库）
 
-7.Lean大的SSR-Plus代码：
+7. Lean大的SSR-Plus代码：
 vi feeds.conf.default加入
 src-git helloworld https://github.com/fw876/helloworld（ssrplus）
 
@@ -54,7 +54,7 @@ src-git helloworld https://github.com/fw876/helloworld（ssrplus）
 ./scripts/feeds install -a
 make menuconfig  
    
-9.取消无线驱动
+9. 取消无线驱动
 kernel modules -> Wireless Drivers -> 取消所有勾选
 network -> WirelessAPD -> 取消hostapd相关的所有勾选(hostapd, hostapd-common（与wpad关联）, hostapd-common-old, hostapd-mini)
  
@@ -68,17 +68,17 @@ Network -> odhcpd-ipv6only
 LuCI -> Protocols -> luci-proto-ipv6
 LuCI -> Protocols -> luci-proto-ppp
 
-12.增加kmod-nls-cp936支持简体中文
+12. 增加kmod-nls-cp936支持简体中文
 kernel modules -> Native Language Support -> kmod-nls-cp936
 
-13.增加ntfs-3g支持
+13. 增加ntfs-3g支持
 Utilities -> Filesystem -> ntfs-3g [1.use external FUSE library, selects package libfuse; 2.install the ntfs-3g.probe utility(*)]
 kernel modules -> Filesystems -> kmod-fuse
 
-14.为openclash增加kmod-inet-diag.ipk
+14. 为openclash增加kmod-inet-diag.ipk
 kernel modules -> Network Support -> kmod-inet-diag
 
-15.修改内核示例  sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.19/g' ./target/linux/x86/Makefile  也可以直接修改./target/linux/x86/Makefile文件中的KERNEL_PATCHVER值。
+15. 修改内核示例  sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.19/g' ./target/linux/x86/Makefile  也可以直接修改./target/linux/x86/Makefile文件中的KERNEL_PATCHVER值。
 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
 
 16. 第二次编译：
@@ -102,7 +102,7 @@ make -jn V=99                                                                # �
 特别提示：
 1.源代码中绝不含任何后门和可以监控或者劫持你的 HTTPS 的闭源软件，SSL 安全是互联网最后的壁垒。安全干净才是固件应该做到的；
 2.如有技术问题需要讨论，欢迎加入 QQ 讨论群：OP共享技术交流群 ,号码 297253733 ，加群链接: 点击链接加入群聊【OP共享技术交流群】：https://jq.qq.com/?_wv=1027&k=5yCRuXL
-3. 想学习OpenWrt开发，但是摸不着门道？自学没毅力？基础太差？怕太难学不会？跟着佐大学OpenWrt开发入门培训班助你能学有所成
+3.想学习OpenWrt开发，但是摸不着门道？自学没毅力？基础太差？怕太难学不会？跟着佐大学OpenWrt开发入门培训班助你能学有所成
 报名地址：http://forgotfun.org/2018/04/openwrt-training-2018.html
 
 
