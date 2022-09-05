@@ -73,7 +73,8 @@ kernel modules -> Filesystems -> kmod-fuse
 13.为openclash增加kmod-inet-diag.ipk
 kernel modules -> Network Support -> kmod-inet-diag
 
-14. 最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
+14.修改内核示例  sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.19/g' ./target/linux/x86/Makefile  也可以直接修改./target/linux/x86/Makefile文件中的KERNEL_PATCHVER值。
+最后选好你要的路由，输入 make -j1 V=s （-j1 后面是线程数。第一次编译推荐用单线程，国内请尽量全局科学上网）即可开始编译你要的固件了。
 
 15. 第二次编译：
 cd lede                                                                      # 进入LEDE目录
