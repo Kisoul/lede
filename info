@@ -40,9 +40,10 @@ src-git Kisoul https://github.com/Kisoul/Lienol-openwrt-packages-backup
 
 6. 加入kenzok8的openwrt-packages：
 vi feeds.conf.default加入
-src-git kenzo https://github.com/kenzok8/openwrt-packages（稳定更新）
+src-git kenzo https://github.com/kenzok8/openwrt-packages（稳定更新，需要同时挂载passwall依赖库）
 src-git small8 https://github.com/kenzok8/small-package（最新更新）
-src-git small https://github.com/kenzok8/small-package（passwall依赖库）
+src-git small https://github.com/kenzok8/small（passwall依赖库）
+src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall.git（passwall最新依赖库）
 
 7. Lean大的SSR-Plus代码：
 vi feeds.conf.default加入
