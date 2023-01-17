@@ -108,7 +108,8 @@ openwrt系统日志报ddns wget 8错误，请升级openssl-util到最新版；
 20.关于user.info mwan3track[***]: Check (ping) failed for target "114.114.115.115" on interface wan (pppoe-wan*). Current score: 6
 出现上面类似错误请在负载均衡中更换上面的ping IP地址（180.76.76.76、119.29.29.29、223.5.5.5）
 
-21.端口转发命令行
+21.端口转发命令行:
+修改firewall：vi etc/config/firewall
 config redirect
         option target 'DNAT'
         option src 'wan'
@@ -118,6 +119,8 @@ config redirect
         option dest_ip '192.168.5.1'
         option dest_port '80'
         option name 'Internet'
+        
+        
 
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
