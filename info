@@ -130,29 +130,24 @@ echo "	option dest_ip '192.168.5.1'" >> /etc/config/firewall
 echo "	option dest_port '80'" >> /etc/config/firewall
 echo "	option name 'Internet'" >> /etc/config/firewall
 
-22.修改外网访问openwrt的物理网卡：
+22.修改外WAN口为静态IP&修改openwrt的WAN口物理网卡为eth3：
 修改network：vi etc/config/network
 config interface 'wan'
-	option ifname 'eth2'
-	option _orig_ifname 'eth1'
-        option _orig_bridge 'false'
-	option ipaddr '192.168.2.175'
+	option ifname 'eth3'
+	option proto 'static'
+	option ipaddr '192.168.2.200'
         option netmask '255.255.255.0'
         option gateway '192.168.2.1'
         option dns '192.168.2.1'
-	     option proto 'static'
                  或
-在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：    
-echo "	option _orig_ifname 'eth1'" >> /etc/config/network
-echo "	option _orig_bridge 'false'" >> /etc/config/network
+在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：
+sed -i "s/option ifname 'eth1'/option ifname 'eth3'/g" /etc/config/network
 sed -i "s/option proto 'dhcp'/option proto 'static'/g" /etc/config/network
-echo "	option ipaddr '192.168.2.88'" >> /etc/config/network
+echo "	option ipaddr '192.168.2.200'" >> /etc/config/network
 echo "	option netmask '255.255.255.0'" >> /etc/config/network
 echo "	option gateway '192.168.2.1'" >> /etc/config/network
 echo "	option dns '192.168.2.1'" >> /etc/config/network
-sed -i "s/option ifname 'eth1'/option ifname 'eth2'/g" /etc/config/network
       
-
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
 你可以自由使用，但源码编译二次发布请注明我的 GitHub 仓库链接。谢谢合作！
