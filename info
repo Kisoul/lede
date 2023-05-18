@@ -147,6 +147,9 @@ echo "	option ipaddr '192.168.2.200'" >> /etc/config/network
 echo "	option netmask '255.255.255.0'" >> /etc/config/network
 echo "	option gateway '192.168.2.1'" >> /etc/config/network
 echo "	option dns '192.168.2.1'" >> /etc/config/network
+
+23.关于EXSI下openwrt系统日志大量出现“blk_update_request i/o error”样式的错误，是由于虚拟机启用了SCSI硬盘控制器的导致的‘
+解决方案：删除这类控制器，用IDE硬盘控制器。
       
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
