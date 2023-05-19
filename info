@@ -102,13 +102,25 @@ make -jn V=99                                                                # �
 （3）运行bash install-tr-control-gitee.sh
 （4）按1安装；
 
-19.关于ddns
+19.关于Transmission2.94打不开web页面
+修改transmission文件找到最后几行代码：vi etc/init.d/transmission
+	#procd_add_jail transmission log  (注释掉这行代码)
+	procd_add_jail transmission log"$config_file"
+	procd_add_jail_mount_rw "$download_dir"
+	procd_add_jail_mount "$web_home"  （添加这行代码）
+	procd_close_instance
+                   或
+在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：
+#修复Transmission-web-control
+sed -i 's#procd_add_jail transmission log#procd_add_jail_mount "$web_home"#g' /etc/init.d/transmission
+
+20.关于ddns
 openwrt系统日志报ddns wget 8错误，请升级openssl-util到最新版；
 
-20.关于user.info mwan3track[***]: Check (ping) failed for target "114.114.115.115" on interface wan (pppoe-wan*). Current score: 6
+21.关于user.info mwan3track[***]: Check (ping) failed for target "114.114.115.115" on interface wan (pppoe-wan*). Current score: 6
 出现上面类似错误请在负载均衡中更换上面的ping IP地址（180.76.76.76、119.29.29.29、223.5.5.5）
 
-21.端口转发命令行:
+22.端口转发命令行:
 修改firewall：vi etc/config/firewall
 config redirect
         option target 'DNAT'
@@ -120,6 +132,8 @@ config redirect
         option dest_port '80'
         option name 'Internet'
                 或
+在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：		
+#增加外网访问路由的端口转发为“1216”
 echo 'config redirect' >> /etc/config/firewall
 echo "	option target 'DNAT'" >> /etc/config/firewall
 echo "	option src 'wan'" >> /etc/config/firewall
@@ -130,10 +144,10 @@ echo "	option dest_ip '192.168.5.1'" >> /etc/config/firewall
 echo "	option dest_port '80'" >> /etc/config/firewall
 echo "	option name 'Internet'" >> /etc/config/firewall
 
-22.修改外WAN口为静态IP&修改openwrt的WAN口物理网卡为eth3：
+23.修改wan口为静态地址“192.168.2.200”&修改物理接口为“eth2”
 修改network：vi etc/config/network
 config interface 'wan'
-	option ifname 'eth3'
+	option ifname 'eth2'
 	option proto 'static'
 	option ipaddr '192.168.2.200'
         option netmask '255.255.255.0'
@@ -141,14 +155,30 @@ config interface 'wan'
         option dns '192.168.2.1'
                  或
 在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：
-sed -i "s/option ifname 'eth1'/option ifname 'eth3'/g" /etc/config/network
-sed -i "s/option proto 'dhcp'/option proto 'static'/g" /etc/config/network
+#修改wan口为静态地址“192.168.2.200”&修改物理接口为“eth2”
+sed -i '/eth1/,$d' /etc/config/network
+echo "	option ifname 'eth2'" >> /etc/config/network
+echo "	option proto 'static'" >> /etc/config/network
 echo "	option ipaddr '192.168.2.200'" >> /etc/config/network
 echo "	option netmask '255.255.255.0'" >> /etc/config/network
 echo "	option gateway '192.168.2.1'" >> /etc/config/network
 echo "	option dns '192.168.2.1'" >> /etc/config/network
 
-23.关于EXSI下openwrt系统日志大量出现“blk_update_request i/o error”样式的错误，是由于虚拟机启用了SCSI硬盘控制器的导致的‘
+23.修改Openwrt内网地址"192.168.5.1"
+修改network代码，vi /etc/config/network
+config interface 'lan'
+	option type 'bridge'
+	option ifname 'eth0'
+	option proto 'static'
+	option ipaddr '192.168.5.1'（修改这行代码）
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+                或
+在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：
+#修改Openwrt内网地址为“192.168.5.1”
+sed -i 's/192.168.1.1/192.168.5.1/g' /etc/config/network
+
+24.关于EXSI下openwrt系统日志大量出现“blk_update_request i/o error”样式的错误，是由于虚拟机启用了SCSI硬盘控制器的导致的‘
 解决方案：删除这类控制器，用IDE硬盘控制器。
       
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
