@@ -42,7 +42,7 @@ src-git Kisoul https://github.com/Kisoul/Lienol-openwrt-packages-backup
 6. 加入kenzok8的openwrt-packages：
 vi feeds.conf.default加入
 src-git kenzo https://github.com/kenzok8/openwrt-packages（稳定更新，需要同时挂载passwall依赖库）
-src-git small8 https://github.com/kenzok8/small-package（最新更新）
+src-git smpackage https://github.com/kenzok8/small-package（最新更新）
 src-git small https://github.com/kenzok8/small（passwall依赖库）
 src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall.git（passwall最新依赖库）
 
@@ -181,6 +181,9 @@ sed -i 's/192.168.1.1/192.168.5.1/g' /etc/config/network
 
 24.关于EXSI下openwrt系统日志大量出现“blk_update_request i/o error”样式的错误，是由于虚拟机启用了SCSI硬盘控制器的导致的‘
 解决方案：删除这类控制器，用IDE硬盘控制器。
+
+25.如果出现Libiptext、Libiptext6等错信息、或Lean源码编译出错的情况，请尝试删除冲突的插件
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
       
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
