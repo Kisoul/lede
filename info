@@ -179,12 +179,15 @@ config interface 'lan'
 #修改Openwrt内网地址为“192.168.5.1”
 sed -i 's/192.168.1.1/192.168.5.1/g' /etc/config/network
 
-24.关于EXSI下openwrt系统日志大量出现“blk_update_request i/o error”样式的错误，是由于虚拟机启用了SCSI硬盘控制器的导致的‘
+24.关于EXSI下openwrt系统日志大量出现“blk_update_request i/o error”样式的错误，是由于虚拟机启用了SCSI硬盘控制器的导致的
 解决方案：删除这类控制器，用IDE硬盘控制器。
 
 25.如果出现Libiptext、Libiptext6等错信息、或Lean源码编译出错的情况，请尝试删除冲突的插件（运行./scripts/feeds update -a后操作）
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
-      
+
+26.出现alist编译失败的情况，运行命令安装libfuse-dev 
+sudo apt-get update && sudo apt-get install -y libfuse-dev
+
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
 你可以自由使用，但源码编译二次发布请注明我的 GitHub 仓库链接。谢谢合作！
