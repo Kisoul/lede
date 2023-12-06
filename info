@@ -157,7 +157,8 @@ config interface 'wan'
                  或
 在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：
 #修改wan口为静态地址“192.168.2.200”&修改物理接口为“eth2”
-sed -i '/eth1/,$d' /etc/config/network
+sed -i '/wan/,$d' /etc/config/network
+echo "config interface 'wan'" >> /etc/config/network
 echo "	option ifname 'eth2'" >> /etc/config/network
 echo "	option proto 'static'" >> /etc/config/network
 echo "	option ipaddr '192.168.2.200'" >> /etc/config/network
