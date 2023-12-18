@@ -186,6 +186,9 @@ sed -i 's/192.168.1.1/192.168.5.1/g' /etc/config/network
 25.出现alist编译失败的情况，运行命令安装libfuse-dev 
 sudo apt-get update && sudo apt-get install -y libfuse-dev
 
+26.遇到transmission或qbittorrent无法运行的情况请回滚到a2a0e5b进行编译：
+git checkout a2a0e5b （在./scripts/feeds update -a前运行）
+
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
 你可以自由使用，但源码编译二次发布请注明我的 GitHub 仓库链接。谢谢合作！
