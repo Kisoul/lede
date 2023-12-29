@@ -134,16 +134,16 @@ config redirect
         option name 'Internet'
                 或
 在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：		
-#增加外网访问路由的端口转发为“1216”
+#增加外网访问test路由的端口转发为“1217”
 echo 'config redirect' >> /etc/config/firewall
 echo "	option target 'DNAT'" >> /etc/config/firewall
 echo "	option src 'wan'" >> /etc/config/firewall
 echo "	option dest 'lan'" >> /etc/config/firewall
 echo "	option proto 'tcp udp'" >> /etc/config/firewall
-echo "	option src_dport '1216'" >> /etc/config/firewall
+echo "	option src_dport '1217'" >> /etc/config/firewall
 echo "	option dest_ip '192.168.5.1'" >> /etc/config/firewall
 echo "	option dest_port '80'" >> /etc/config/firewall
-echo "	option name 'Internet'" >> /etc/config/firewall
+echo "	option name 'Internet-test'" >> /etc/config/firewall
 
 23.修改wan口为静态地址“192.168.2.200”&修改物理接口为“eth2”
 修改network：vi etc/config/network
