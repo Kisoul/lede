@@ -192,6 +192,15 @@ sudo apt-get update && sudo apt-get install -y libfuse-dev
 26.遇到transmission或qbittorrent无法运行的情况请回滚到a2a0e5b进行编译：
 git checkout a2a0e5b （在./scripts/feeds update -a前运行）
 
+27.增加联发科MT7921、联发科MT7922、高通QCNFA765无线网卡：
+firmware -> th11k-firmware-wcn6855（高通QCNFA765）
+firmware -> mt7921bt-firmware（联发科MT7921）
+firmware -> mt7922bt-firmware（联发科MT792）
+Kernel modules -> Wireless Drivers -> kmod-ath11k-pci（高通QCNFA765）
+Kernel modules -> Wireless Drivers -> kmod-mt7921-firmware、kmod-mt7921e、kmod-mt7921s、kmod-mt7921u（联发科MT7921）
+Kernel modules -> Wireless Drivers -> kmod-mt7921-firmware（联发科MT7921）
+Network -> WirelessAPD -> hostapd-common、 wpad-openssl
+
 本套代码保证肯定可以编译成功。里面包括了 R9 所有源代码，包括 IPK 的。
 
 你可以自由使用，但源码编译二次发布请注明我的 GitHub 仓库链接。谢谢合作！
