@@ -114,6 +114,8 @@ make -jn V=99                                                                # �
 在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：
 #修复Transmission-web-control
 sed -i 's#procd_add_jail transmission log#procd_add_jail_mount "$web_home"#g' /etc/init.d/transmission
+ 或
+编译前将transmission中的makefile（可以在我的在线编译代码中找）进行替换
 
 20.关于ddns
 openwrt系统日志报ddns wget 8错误，请升级openssl-util到最新版；
@@ -185,6 +187,7 @@ sed -i 's/192.168.1.1/192.168.5.1/g' /etc/config/network
 
 25.出现alist编译失败的情况，运行命令安装libfuse-dev 
 sudo apt-get update && sudo apt-get install -y libfuse-dev
+如果还是有问题可以替换lede里面的golang组件：将src-git golang https://github.com/kenzok8/golang feeds/packages/lang/golang.git添加到feeds.conf.default中的第一行；
 
 26.遇到transmission或qbittorrent无法运行的情况请回滚到a2a0e5b进行编译：
 git checkout a2a0e5b （在./scripts/feeds update -a前运行）
