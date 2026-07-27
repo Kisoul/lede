@@ -153,9 +153,9 @@ config interface 'wan'
 	option ifname 'eth2'
 	option proto 'static'
 	option ipaddr '192.168.2.200'
-        option netmask '255.255.255.0'
-        option gateway '192.168.2.1'
-        option dns '192.168.2.1'
+    option netmask '255.255.255.0'
+    option gateway '192.168.2.1'
+    option dns '192.168.2.1'
                  或
 在源代码/home/kisoul/lede/package/lean/default-settings/files/zzz-default-settings文件中加入如下：
 #修改wan口为静态地址“192.168.2.200”&修改物理接口为“eth2”
